@@ -28,6 +28,15 @@ return require('packer').startup(function(use)
 	'nvim-lualine/lualine.nvim', -- 状态栏
 	requires = {'kyazdani42/nvim-web-devicons', opt = true} -- icon
   }
+  use {
+	'nvim-tree/nvim-tree.lua', --directory tree
+	requires = {
+		'nvim-tree/nvim-web-devicons' -- icon
+	}
+  }
+  use 'christoomey/vim-tmux-navigator' -- 用crtl+hjkl移动窗口与tree
+  use 'nvim-treesitter/nvim-treesitter' -- syntax highlight
+  use 'p00f/nvim-ts-rainbow' -- 配合treesitter 区分不同颜色括号
 
   if packer_bootstrap then
     require('packer').sync()
