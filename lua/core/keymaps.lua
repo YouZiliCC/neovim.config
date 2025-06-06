@@ -1,0 +1,17 @@
+-->>>主键<<<
+vim.g.mapleader = " "
+
+-- >>>INSERT<<<
+vim.keymap.set("i", "jk", "<ESC>") -- JK退出插入模式
+
+-- >>>VISUAL<<<
+-- 移动某一块 J->UP K->DOWN 真好用
+vim.keymap.set("v", "j", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "k", ":m '<-2<CR>gv=gv")
+
+-- >>>NORMAL<<<
+-- 窗口
+vim.keymap.set("n", "<leader>sv", "<C-w>v") -- 水平新增窗口 主键+sv(split vertical)
+vim.keymap.set("n", "<leader>sh", "<C-w>s") -- 垂直新增窗口 主键+sh(split horizontal)
+-- 取消高亮nh(no highlight)
+vim.keymap.set("n", "<leader>nh", ":nohl<CR>")
