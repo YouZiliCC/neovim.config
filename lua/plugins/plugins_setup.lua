@@ -22,21 +22,37 @@ vim.cmd([[
 ]])
 
 return require('packer').startup(function(use)
-  use 'wbthomason/packer.nvim'
-  use 'folke/tokyonight.nvim' -- topic
-  use {
-	'nvim-lualine/lualine.nvim', -- 状态栏
-	requires = {'kyazdani42/nvim-web-devicons', opt = true} -- icon
-  }
-  use {
-	'nvim-tree/nvim-tree.lua', --directory tree
-	requires = {
-		'nvim-tree/nvim-web-devicons' -- icon
+	use 'wbthomason/packer.nvim'
+	use 'folke/tokyonight.nvim' -- topic
+	use {
+		'nvim-lualine/lualine.nvim', -- 状态栏
+		requires = {'kyazdani42/nvim-web-devicons', opt = true} -- icon
 	}
-  }
-  use 'christoomey/vim-tmux-navigator' -- 用crtl+hjkl移动窗口与tree
-  use 'nvim-treesitter/nvim-treesitter' -- syntax highlight
-  use 'p00f/nvim-ts-rainbow' -- 配合treesitter 区分不同颜色括号
+	use {
+		'nvim-tree/nvim-tree.lua', --directory tree
+		requires = {
+			'nvim-tree/nvim-web-devicons' -- icon
+		}
+	}
+	use 'christoomey/vim-tmux-navigator' -- 用crtl+hjkl移动窗口与tree
+	use 'nvim-treesitter/nvim-treesitter' -- syntax highlight
+	use 'p00f/nvim-ts-rainbow' -- 配合treesitter 区分不同颜色括号
+	use {
+		'williamboman/mason.nvim',
+		'williamboman/mason-lspconfig.nvim',
+		'neovim/nvim-lspconfig'
+	}
+	use {'hrsh7th/nvim-cmp',
+        requires = {
+            'hrsh7th/cmp-nvim-lsp',
+            'hrsh7th/cmp-buffer',
+            'hrsh7th/cmp-path',
+            'saadparwaiz1/cmp_luasnip',
+        }
+	}
+	use 'L3MON4D3/LuaSnip'
+	use 'saadparwaiz1/cmp_luasnip'
+	use 'rafamadriz/friendly-snippets'
 
   if packer_bootstrap then
     require('packer').sync()
